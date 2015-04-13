@@ -72,7 +72,7 @@ public class JukeBoxControls extends JPanel
 			current = music[musicCombo.getSelectedIndex()];
 		}
 
-		@Override
+		
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
 			
