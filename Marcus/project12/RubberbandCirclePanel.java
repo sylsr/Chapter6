@@ -8,11 +8,11 @@ import javax.swing.*;
 public class RubberbandCirclePanel extends JPanel
 {
 	private Point point1 = null, point2 = null;
+	int radius;
 	
 	public RubberbandCirclePanel()
 	{
 		setPreferredSize(new Dimension(900,900));
-		setBackground(Color.red);
 		
 		  RubberbandListener listener = new RubberbandListener();
 	      addMouseListener(listener);
@@ -25,7 +25,8 @@ public class RubberbandCirclePanel extends JPanel
 
 	      page.setColor (Color.black);
 	      if (point1 != null && point2 != null)
-	         page.fillOval(point1.x, point1.y, point2.x, point2.y);
+	    	 radius =(int) Math.sqrt(Math.pow(point2.x-point1.x, 2)+Math.pow(point2.y - point1.x, 2));
+	         page.fillOval(point1.x, point1.y, radius, radius);
 	   }
 	
 	private class RubberbandListener implements MouseListener, MouseMotionListener
