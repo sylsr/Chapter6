@@ -2,7 +2,6 @@ package project12;
 
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
 public class RubberbandCirclePanel extends JPanel
@@ -12,21 +11,21 @@ public class RubberbandCirclePanel extends JPanel
 	
 	public RubberbandCirclePanel()
 	{
+		addMouseListener(new RubberbandListener());
+	    addMouseMotionListener(new RubberbandListener());
 		setPreferredSize(new Dimension(900,900));
-		
-		  RubberbandListener listener = new RubberbandListener();
-	      addMouseListener(listener);
-	      addMouseMotionListener(listener);
+		setBackground(Color.cyan);
 	}
 	
 	public void paintComponent(Graphics page)
 	   {
 	      super.paintComponent(page);
-
-	      page.setColor (Color.black);
 	      if (point1 != null && point2 != null)
-	    	 radius =(int) Math.sqrt(Math.pow(point2.x-point1.x, 2)+Math.pow(point2.y - point1.x, 2));
-	         page.fillOval(point1.x, point1.y, radius, radius);
+	      {
+	    	 radius =(int) Math.sqrt((Math.pow(point2.x-point1.x, 2))+(Math.pow(point2.y - point1.y, 2)));
+	      	 page.setColor(Color.green);
+	         page.fillOval(point1.x-radius, point1.y-radius, radius*2, radius*2);
+	      }
 	   }
 	
 	private class RubberbandListener implements MouseListener, MouseMotionListener
@@ -34,6 +33,7 @@ public class RubberbandCirclePanel extends JPanel
 	      
 		public void mousePressed(MouseEvent event)
 	      {
+			
 	         point1 = event.getPoint();
 	      }
 

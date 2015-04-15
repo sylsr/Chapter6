@@ -1,18 +1,16 @@
-package project12;
+package project21;
 
-import java.awt.Color;
 import javax.swing.*;
 
-public class RubberbandCircle 
+public class CatchTheCreature 
 {
 
 	public static void main(String[] args) 
 	{
-		JFrame frame = new JFrame("Rubberband Circle");
+		JFrame frame = new JFrame("Catch the Creature!!!");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		frame.getContentPane().add(new RubberbandCirclePanel());
-		
+		frame.getContentPane().add(new CatchTheCreaturePanel());
 		
 		frame.pack();
 		frame.setResizable(false);
