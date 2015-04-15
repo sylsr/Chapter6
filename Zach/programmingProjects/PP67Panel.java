@@ -31,7 +31,7 @@ public class PP67Panel extends JPanel
 			repaint();
 		}
 	}
-	public void painComponent(Graphics g)
+	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
 		
@@ -41,32 +41,32 @@ public class PP67Panel extends JPanel
 		
 		g.setColor(Color.gray);
 		
-		g.fillOval(220, 245, 170, 70);
+		g.fillOval(220, 200, 170, 70);
+		
+		g.setColor(Color.gray);
+		
+		g.fillOval(220, 400, 170, 70);
 		
 		g.setColor(Color.gray);
 		
 		g.fillOval(220, 300, 170, 70);
-		
-		g.setColor(Color.gray);
-		
-		g.fillOval(220, 220, 170, 70);
 		if (count == 1)
 		{
 			g.setColor(Color.green);
 			
-			g.fillOval(220, 220, 170, 70);
+			g.fillOval(220, 400, 170, 70);
 		}
 		if (count == 2)
+		{
+			g.setColor(Color.red);
+			
+			g.fillOval(220, 200, 170, 70);
+		}
+		if (count == 3)
 		{
 			g.setColor(Color.yellow);
 			
 			g.fillOval(220, 300, 170, 70);
-		}
-		if (count == 3)
-		{
-			g.setColor(Color.red);
-			
-			g.fillOval(220, 245, 170, 70);
 			
 		}
 		repaint();
